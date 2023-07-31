@@ -26,10 +26,7 @@ public class ElevatorHandler {
 
     public void moveElevatorToFloor(int floorNum, Elevator elevator) {
         int elevFloor = elevator.getFloorNum();
-        if(floorNum > floors.size() || floorNum < 0){
-            System.out.println("No such button");
-            return;
-        }
+
         if (floorNum < elevFloor) {
             for (int i = elevFloor; i >= floorNum; i--) {
                 System.out.println("Move down elevator to " + i + " floor");
@@ -40,8 +37,6 @@ public class ElevatorHandler {
                 System.out.println("Move up elevator to " + i + " floor");
                 elevator.setFloorNum(i);
             }
-        } else {
-            System.out.println("Elevator stays on the floor " + elevFloor);
         }
     }
 

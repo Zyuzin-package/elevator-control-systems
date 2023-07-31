@@ -20,6 +20,15 @@ public class Elevator {
     }
 
     public void setFloorNum(int floorNum) {
+        if(floorNum > elevatorHandler.getFloors().size() || floorNum < 0){
+            System.out.println("No such button");
+            return;
+        }
+        if (floorNum==this.floorNum){
+            System.out.println("Elevator stays on the floor " + floorNum);
+            return;
+        }
+
         System.out.println("Floor number: " + floorNum);
         this.floorNum = floorNum;
     }

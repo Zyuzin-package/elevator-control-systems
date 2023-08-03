@@ -10,10 +10,16 @@ import java.util.Collections;
 import java.util.List;
 
 public class Model {
+
     final List<Elevator> elevatorList = Collections.synchronizedList(new ArrayList<>());
     public static final List<Floor> floorList = Collections.synchronizedList(new ArrayList<>());
-
+    /**
+     * Константа для вывода красного текста в консоль
+     */
     public static final String RED_TEXT = "\u001B[31m";
+    /**
+     * Константа для вывода обычного текста в консоль
+     */
     public static final String DEFAULT_TEXT = "\u001B[0m";
 
     public Model() {
@@ -23,13 +29,17 @@ public class Model {
         }
         elevatorList.add(new Elevator(1));
         elevatorList.add(new Elevator(2));
-
     }
 
-
+    /**
+     * Данный метод служит для иммитации действий пользователя.
+     * В момент вызова, метод начинает постоянно проверять наличие свободного лифта, и если такое имеется - иммитировать нажатия на кнопки
+     * @param num - номер этажа, на котором вызван лифт
+     * @param floorNum - на какую кнопку нажимает пассажир в лифте
+     * @throws InterruptedException
+     */
     public void pressBtnOnFloorAndThenPressOnBtnIntoElevator(int num, int floorNum) throws InterruptedException {
         while (true) {
-
             for (Elevator el : elevatorList) {
                 if (el.getElevatorStatus() == ElevatorStatus.STANDS_WITH_DOORS_OPEN) {
                     el.goToFloor(num);
@@ -41,7 +51,7 @@ public class Model {
                     return;
                 }
             }
-
+            Thread.sleep(500);
         }
     }
 

@@ -14,6 +14,6 @@ public class main {
         Model model = new Model();
         model.userSimulation(100, 4);// вызов для демонстрации работы валидации, и дальнейшего функционирования системы
         model.userSimulation(1,4);
-        model.userSimulation(5,100);
+        model.userSimulation(5,4);
     }
 }

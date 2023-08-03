@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Model {
+public class Handler {
 
     final List<Elevator> elevatorList = Collections.synchronizedList(new ArrayList<>());
     public static final List<Floor> floorList = Collections.synchronizedList(new ArrayList<>());
@@ -22,7 +22,7 @@ public class Model {
      */
     public static final String DEFAULT_TEXT = "\u001B[0m";
 
-    public Model() {
+    public Handler() {
         for (int i = 0; i <= 19; i++) {
             Floor floor = new Floor(i + 1);
             floorList.add(floor);

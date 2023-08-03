@@ -1,6 +1,6 @@
 package test1;
 
-import test1.service.Model;
+import test1.service.Handler;
 
 public class main {
     /**
@@ -11,11 +11,11 @@ public class main {
      */
     //TODO: «апуск второго варианта решени€ задачи
     public static void main(String[] args) {
-        Model model = new Model();
+        Handler handler = new Handler();
 
         Runnable runnable1 = () -> {
             try {
-                model.pressBtnOnFloorAndThenPressOnBtnIntoElevator(1, 4);
+                handler.pressBtnOnFloorAndThenPressOnBtnIntoElevator(1, 4);
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -24,7 +24,7 @@ public class main {
 
         Runnable runnable2 = () -> {
             try {
-                model.pressBtnOnFloorAndThenPressOnBtnIntoElevator(5, 4);
+                handler.pressBtnOnFloorAndThenPressOnBtnIntoElevator(5, 4);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -33,7 +33,7 @@ public class main {
 
         Runnable runnable3 = () -> {
             try {
-                model.pressBtnOnFloorAndThenPressOnBtnIntoElevator(7, 3);
+                handler.pressBtnOnFloorAndThenPressOnBtnIntoElevator(7, 3);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -41,7 +41,7 @@ public class main {
 
         Runnable runnable4 = () -> {
             try {
-                model.pressBtnOnFloorAndThenPressOnBtnIntoElevator(10, 5);
+                handler.pressBtnOnFloorAndThenPressOnBtnIntoElevator(10, 5);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

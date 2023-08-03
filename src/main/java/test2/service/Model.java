@@ -217,7 +217,7 @@ public class Model {
      * @param elevator - лифт у которого нужно выполнить код
      * @param block - последовательность команд
      */
-    private void runIfThreadNotActive(Elevator elevator, Runnable block) throws InterruptedException {
+    private void runIfThreadNotActive(Elevator elevator, Runnable block)  {
         Thread currentThread = elevator78ThreadMap.get(elevator);
         if (currentThread == null || currentThread.isInterrupted()) {
             currentThread = new Thread(block);
@@ -236,7 +236,7 @@ public class Model {
             }
         }
     }
-    
+
     private void deActivatedThread(Elevator elevator) throws InterruptedException {
         elevator78ThreadMap.get(elevator).join();
     }

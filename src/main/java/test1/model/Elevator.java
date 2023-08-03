@@ -2,7 +2,7 @@ package test1.model;
 
 import lombok.ToString;
 
-import static test1.service.Model.*;
+import static test1.service.Handler.floorList;
 
 @ToString
 public class Elevator {

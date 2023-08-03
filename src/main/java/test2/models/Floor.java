@@ -6,7 +6,23 @@ import java.util.Map;
 
 public class Floor {
     private int floorNum;
-
+    /**
+     * Замена переменных, для вывода статусов лифта на дисплей этажа указанных в тз:
+     * {@code
+     * ...
+     *  Этаж
+     *  Свойства:
+     *  1. Текущий этаж кабины 1
+     *  2. Текущий статус кабины 1
+     *  3. Текущий этаж кабины 2
+     *  4. Текущий статус кабины 2
+     *   ...
+     * }
+     * <br>
+     * Данная мапа служит для хранения информации о лифте{@code Elevator} (его состояния) и номера этажа {@code Integer}.
+     * Используется для вывода информации о каждом этаже
+     * @see test2.service.Model
+     */
     private Map<Elevator,Integer> elevatorFloor =  Collections.synchronizedMap(new HashMap<>());
 
     private volatile boolean btnStats = false;
@@ -40,38 +56,6 @@ public class Floor {
     public void setElevatorFloor(Map<Elevator, Integer> elevatorFloor) {
         this.elevatorFloor = elevatorFloor;
     }
-
-//    public int getElevator1Floor() {
-//        return elevator1Floor;
-//    }
-//
-//    public void setElevator1Floor(int elevator1Floor) {
-//        this.elevator1Floor = elevator1Floor;
-//    }
-//
-//    public ElevatorStatus getElevator1Status() {
-//        return elevator1Status;
-//    }
-//
-//    public void setElevator1Status(ElevatorStatus elevator1Status) {
-//        this.elevator1Status = elevator1Status;
-//    }
-//
-//    public int getElevator2Floor() {
-//        return elevator2Floor;
-//    }
-//
-//    public void setElevator2Floor(int elevator2Floor) {
-//        this.elevator2Floor = elevator2Floor;
-//    }
-//
-//    public ElevatorStatus getElevator2Status() {
-//        return elevator2Status;
-//    }
-//
-//    public void setElevator2Status(ElevatorStatus elevator2Status) {
-//        this.elevator2Status = elevator2Status;
-//    }
 
     public boolean isBtnStats() {
         return btnStats;

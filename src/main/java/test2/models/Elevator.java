@@ -7,7 +7,13 @@ public class Elevator {
     private int id;
     private int floorNum = 1;
     private ElevatorStatus elevatorStatus = ElevatorStatus.STANDS_WITH_DOORS_OPEN;
+    /**
+     * Переменная не указанная в тз. Становится true когда нажимная пластина лифта, фиксирует наличие пассажира в кабине
+     */
     private boolean isPersonInside = false;
+    /**
+     * Переменная не указанная в тз. Отражает нажатую кнопку этажа в кабине лифта
+     */
     private int pressedButton;
 
     public Elevator(int id) {
